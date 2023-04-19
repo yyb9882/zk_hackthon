@@ -36,4 +36,8 @@ mocha test/SHA256_2 --timeout 10000
 ```
 
 ## Comparison
-We compare the number of R1CS constraints for the state-of-the-art work
+We compare the number of R1CS constraints for the state-of-the-art work:
+| Example ([previews](https://github.com/akosba/xjsnark/tree/master/doc/code_previews#code-previews)) | Description | Number of constraints |
+| ----- | --- | --- |
+| [SHA-256 (Unpadded)](https://github.com/akosba/xjsnark/tree/master/doc/code_previews/README.md#sha-256-unpadded) |  High-level implementation of SHA-256 which is compiled to an optimized circuit similar to the one produced by manual/low-level libraries, as in [jsnark](https://github.com/akosba/jsnark). | 25538 | 
+| Ours | -- | --
