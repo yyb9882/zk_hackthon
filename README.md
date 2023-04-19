@@ -4,13 +4,16 @@
 For more details about testing our SHA256 circom implementation, we refer you to [here](https://github.com/yyb9882/zk_hackthon/tree/main/category1).
 
 ## SHA256 Workflow
-1. Represent the message as binary string.
-2. Padding the binary string.
+Template `sha256(l)` in `category1/SHA256.circom` is the main function for the entire SHA256 hash function (including padding and SHA256 compression function).
+The workflow of SHA256 hash function is as follows:
+  
+1. Represent the message as binary string. (For a sake of time limitation, we do not consider message representation. Instead, the input message should be binary strings)
+2. Padding the binary string(template `padding(l)` in `category1/SHA256.circom`) 
 3. Split the padded binary string into several chunks, each chunk consists of 512 bits.
-4. For each chunk, run a SHA256 compression function.
+4. For each chunk, run a SHA256 compression function(template `sha256_compression` in `category1/SHA256.circom`).
 5. Output the final state as the output of SHA256 hash function.
+  
 The total number of R1CS constraints is linear to the number of times to execute the SHA256 compression function.
-
 
 ## SHA256 Subcomputation
 All the implementation of subcomputation (subcircuits) are implemented in `category1/gadgets.circom`,
