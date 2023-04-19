@@ -27,7 +27,7 @@ We use the same implementation of these two subcomputations in [here](https://gi
 $$maj := (a\ and\ b) \oplus (a\ and\ c) \oplus (b\ and\ c)$$
   
 $$ch := (e\ and\ f) \oplus ((not\ e)\ and\ g)$$
-We use the same implementation of maj operation in [here] (https://github.com/iden3/circomlib/blob/master/circuits/sha256/maj.circom) and ch operation in [here](https://github.com/iden3/circomlib/blob/master/circuits/sha256/ch.circom).
+We use the same implementation of maj operation in [here](https://github.com/iden3/circomlib/blob/master/circuits/sha256/maj.circom) and ch operation in [here](https://github.com/iden3/circomlib/blob/master/circuits/sha256/ch.circom).
 ### bitADD
 
 
