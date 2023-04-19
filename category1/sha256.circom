@@ -86,6 +86,7 @@ template padding(l)
     }
 }
 
+// SHA256 compression function
 template sha256_compression()
 {
     // init state
