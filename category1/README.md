@@ -1,23 +1,38 @@
 <h1 align="center">SHA256 Circom Instantiation</h1>
 
 ## Overview
-
-For some function, we refer to the circom library 
+This is a SHA256 circuit instantiation for zk hackthon. Our team uses circom to instantiate the entire SHA256 hash function.
+The structure of our project is described as follows:
+`sha256.circom`: main function for sha256 circuit, including padding and SHA256 compression function.
+`gadgets.circom`: all subcircuit used in SHA256 compression function.
+`constants.circom`: constants k and H used in SHA256 compression function.
+`test/circuits/SHA256_1.circom`: test for the correctness of SHA256('abc').
+`test/circuits/SHA256_2.circom`: test for the correctness of SHA256('abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc').
 
 ## Installation
-1. Circom 
-2. Install mocha test runner
+1. Install `circom` following this [installation guide](https://docs.circom.io/getting-started/installation/). Once installed, ensure that you're using the correct version of `circom` by running `circom --version`. You should see `circom compiler 2.1.4` or later.
+2. Install the `mocha test runner`: run `npm install -g mocha`.
+3. Run `mocha test` and verify that most of the tests fail, but not because of missing dependencies.
 
 ## Build
+With the number of chunks in SHA256 hash function increases, 
+To print the number of R1CS constraints, run the following commands:
 ```sh
 circom test/circuits/SHA256_1.circom --r1cs
 circom test/circuits/SHA256_2.circom --r1cs
 ```
-Print the number of R1CS constraints
+It is obvious that the number of R1CS constraints of the entire SHA256 hash function is linear to the number of chunks.
+This is because the number of times to execute the SHA256 compression function is equal to the number of chunks.
 
-## Test the correctness of SHA256 circuit
+## Verify the Correctness of SHA256 Circuit
+You can run both of the tests with the command:
 ```sh
 mocha test --timeout 10000
+```
+or, you can run one of the two tests with the command:
+```sh
+mocha test/SHA256_1 --timeout 10000
+mocha test/SHA256_2 --timeout 10000
 ```
 
 ## Comparison
