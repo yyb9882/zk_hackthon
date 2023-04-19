@@ -24,9 +24,9 @@ $$SmallSigma(ra, rb, rc)\ =\ RightRotate(a, ra)\oplus{RightRotate(b, rb)}\oplus{
 $$BigSigma(ra, rb, rc)\ =\ RightRotate(a, ra)\oplus{RightRotate(b, rb)}\oplus{RightRotate(c, rc)}$$ 
 We use the same implementation of these two subcomputations in [here](https://github.com/iden3/circomlib/blob/master/circuits/sha256/sigma.circom).
 ### Maj, Ch
-$$maj := (a\ and\ b) \oplus (a\ and\ c) \oplus (b\ and\ c)$$
+$$maj(a,b,c) = (a\ and\ b) \oplus (a\ and\ c) \oplus (b\ and\ c)$$
   
-$$ch := (e\ and\ f) \oplus ((not\ e)\ and\ g)$$
+$$ch(e,f,g) = (e\ and\ f) \oplus ((not\ e)\ and\ g)$$
 We use the same implementation of maj operation in [here](https://github.com/iden3/circomlib/blob/master/circuits/sha256/maj.circom) and ch operation in [here](https://github.com/iden3/circomlib/blob/master/circuits/sha256/ch.circom).
 ### bitADD
 bitADD operation is used to add two binary strings and then modulo $2^{32}$. The highest bit is not needed if it exceeds $2^{32}$.
