@@ -4,7 +4,7 @@
 This is a SHA256 circuit instantiation for zk hackthon. Our team uses circom to instantiate the entire SHA256 hash function.
 The structure of our project is described as follows:
 1. `sha256.circom`: Main function for sha256 circuit, including padding and SHA256 compression function.
-2. `gadgets.circom`: All subcircuits used in SHA256 compression function, some of the instantiation in `gadgets.circom` come from [here](https://github.com/iden3/circomlib/tree/master/circuits/sha256).
+2. `gadgets.circom`: All subcircuits used in SHA256 compression function, some of the instantiations in `gadgets.circom` come from [here](https://github.com/iden3/circomlib/tree/master/circuits/sha256).
 3. `constants.circom`: Constants k and H used in SHA256 compression function.
 4. `test/circuits/SHA256_1.circom`: Test for the correctness of SHA256('abc').
 5. `test/circuits/SHA256_2.circom`: Test for the correctness of SHA256('abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc').
