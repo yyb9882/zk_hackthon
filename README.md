@@ -19,7 +19,8 @@ most subcomputations are based on bit operations and we introduce it as follows:
 It is unnecessary to verify every input lies in the binary field (0 or 1), which significantly reduce the number of R1CS constraints.
 All bits will be checked in some intermediate rounds and in the final round.
 ### SmallSigma, BigSigma
-$$\oplus$$
+$$SmallSigma(ra, rb, rc)\ =\ RightRotate(a, ra)\oplus{RightRotate(b, rb)}\oplus{RightShift(c, rc)}$$ \\
+$$BigSigma(ra, rb, rc)\ =\ RightRotate(a, ra)\oplus{RightRotate(b, rb)}\oplus{RightRotate(c, rc)}$$ \\
 
 ## Comparison
 We compare the number of R1CS constraints for the state-of-the-art work:
