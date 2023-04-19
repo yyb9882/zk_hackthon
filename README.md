@@ -12,9 +12,14 @@ For more details about testing our SHA256 circom implementation, we refer you to
 The total number of R1CS constraints is linear to the number of times to execute the SHA256 compression function.
 
 
-# SHA256 Subcomputation
-##  Hello
-### Hello
+## SHA256 Subcomputation
+All the implementation of subcomputation (subcircuits) are implemented in `category1/gadgets.circom`,
+most subcomputations are based on bit operations and we introduce it as follows:
+### bitAND, bitXOR, bitNOT
+It is unnecessary to verify every input lies in the binary field (0 or 1), which significantly reduce the number of R1CS constraints.
+All bits will be checked in some intermediate rounds and in the final round.
+### SmallSigma, BigSigma
+$$\oplus$$
 
 ## Comparison
 We compare the number of R1CS constraints for the state-of-the-art work:

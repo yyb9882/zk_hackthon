@@ -299,7 +299,7 @@ template getMaj()
     for (var i = 0; i < 32; i++)
     {
         mid[i] <== b[i] * c[i];
-        maj[i] <== a[i] * (b[i] + c[i]- 2*mid[i]) + mid[i];
+        maj[i] <== a[i] * (b[i] + c[i]- 2 * mid[i]) + mid[i];
     }
     // test the result is true or false
     // component maj_out = Bits2Num(32);
