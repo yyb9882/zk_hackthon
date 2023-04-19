@@ -22,6 +22,14 @@ All bits will be checked in some intermediate rounds and in the final round.
 $$SmallSigma(ra, rb, rc)\ =\ RightRotate(a, ra)\oplus{RightRotate(b, rb)}\oplus{RightShift(c, rc)}$$ 
   
 $$BigSigma(ra, rb, rc)\ =\ RightRotate(a, ra)\oplus{RightRotate(b, rb)}\oplus{RightRotate(c, rc)}$$ 
+We use the same implementation of these two subcomputations in [here](https://github.com/iden3/circomlib/blob/master/circuits/sha256/sigma.circom).
+### Maj, Ch
+$$maj := (a and b) \oplus (a and c) \oplus (b and c)$$
+  
+$$ch := (e and f) \oplus ((not e) and g)$$
+We use the same implementation of maj operation in [here] (https://github.com/iden3/circomlib/blob/master/circuits/sha256/maj.circom) and ch operation in [here](https://github.com/iden3/circomlib/blob/master/circuits/sha256/ch.circom).
+### bitADD
+
 
 ## Comparison
 We compare the number of R1CS constraints for the state-of-the-art work:

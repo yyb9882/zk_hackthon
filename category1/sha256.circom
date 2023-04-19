@@ -27,7 +27,7 @@ template sha256(l)
         }
     }
     // First round
-    component compression[1000];
+    component compression[b];
     compression[0] = sha256_compression();
     for(var i = 0; i < 8; i++)
     {
