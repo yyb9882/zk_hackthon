@@ -12,13 +12,13 @@
   * 5 `Demonstration.mp4`: Demonstration of our SHA256 hash function submission.
   * 6 `README.md`: Guidance for testing our SHA256 implementation.
 * Category4 (this is the folder that we made to deliver the solution for Task 4.2):
-  * 1
-  * 2
-  * 3
+  *  `blake2f-gadget`dir contains our implemention.
+  * `benchmarking` and `blake2f-circuit`dir are copied from the task repo.
 # Build and Run Guide
 
 Please go to [category1](https://github.com/yyb9882/zk_hackthon/tree/main/category1) and [category4](https://github.com/yyb9882/zk_hackthon/tree/main/category4/zk-mooc-halo2) for the specifications.
 
 # Description of optimization
 
-Please go to [category1](https://github.com/yyb9882/zk_hackthon/tree/main/category1) and [category4](https://github.com/yyb9882/zk_hackthon/tree/main/category4/zk-mooc-halo2) for details.
+Please go to [category1](https://github.com/yyb9882/zk_hackthon/tree/main/category1) and [category4](https://github.com/yyb9882/zk_hackthon/tree/main/category4/) for details.
+
