@@ -8,7 +8,7 @@ We use the implemention in go-ethereum for reference:https://github.com/ethereum
 
 We split the blake2f function into three parts.
 
-Frist part: `Scheduler`
+First part: `Scheduler`
 
 ```go
 	v0, v1, v2, v3, v4, v5, v6, v7 := h[0], h[1], h[2], h[3], h[4], h[5], h[6], h[7]
@@ -18,7 +18,7 @@ Frist part: `Scheduler`
 	v14 ^= flag
 ```
 
-Second part: `MainRounds` For each round in MainRounds, we can split it into 4 subrounds. v0-v15 were fully updated in each subround.
+Second part: `MainRounds`. For each round in MainRounds, we can split it into 4 subrounds. v0-v15 were fully updated in each subround.
 
 ```go
 	for i := 0; i < int(rounds); i++ {
@@ -88,7 +88,7 @@ v10 += v14   // for v10, offset here is 4
 v11 += v15   // for v11, offset here is also 4
 ```
 
-Theres another type of offset add in blake2f. We call it `offset add with m`(only for v0, v1, v2, v3)
+There is another type of offset add in blake2f. We call it `offset add with m`(only for v0, v1, v2, v3)
 
 For example:
 
@@ -102,7 +102,7 @@ For example:
 
 
 
-All the offset add in the main rounds could categorize into
+All the offset add in the main rounds can be categorized into
 
 - offset add without m,  offsets are: 1, 4, 5
 - offset with m: offsets are: -15, -12, -11
@@ -120,6 +120,8 @@ v12 = bits.RotateLeft64(v12, -32)
 v5 ^= v9
 v5 = bits.RotateLeft64(v5, -24)
 ```
+So, for simplicity, we constraints xor and rotate in one step.
+There a many xor_and_rotate gates in our implemention.
 
 
 
@@ -127,7 +129,7 @@ v5 = bits.RotateLeft64(v5, -24)
 
 ### Spread Table
 
-We use 16-bit spread table for xor operation(explain blow).
+We use a 16-bit spread table for xor operation(explain blow).
 
 `spread` means *pads a 0 bit in front of each bit of the original value*, i.e.
 
@@ -144,15 +146,15 @@ Our table will be:
 | .....            |                                  |
 | 1111111111111111 | 01010101010101010101010101010101 |
 
+We use this table to help us to checking xor operation. (Idea borrowed from zcash/halo2/sha256 gadgets)
+
 ### Decompose Gate
 
-For an uint64 A, and 16 bits unsigned integer a0-a3
+For an uint64 `A`, and 4 16-bit unsigned integer `a0`, `a1`, `a2`, `a3`.
 
 We define a  `A` = `a0` + 2^16 * `a1` + 2^32 * `a2` + 2^48 * `a3 `  as a decompose.
 
-We lookup a0-a3 were stored in the dense column in the spread table.
-
-After decompose, we can also get the spread form of a0-a3
+We lookup a0-a3 in the dense column of the spread table.So, After decompose, we can also get the spread form of a0-a3
 
 
 
@@ -160,7 +162,7 @@ After decompose, we can also get the spread form of a0-a3
 
 As mentioned above, after decompse a uint64, we get the spread form of it's 16-bit parts.
 
-For a uint64 value A, we define
+For a uint64 value `A`, we define
 
 ```
 Spread(A) = spread(a0) + 2^32 * spread(a1) + 2^64 * spread(a2) + 2^96 * spread(a3)
@@ -217,7 +219,7 @@ v_i + 2^64 * carry = old_v_i + v_j
 
 One thing special about blake2f is that its execution round was determined by a parameter: `round`.
 
-we can only set a MAX_ROUND in the circuit.If current round <= round, we updated state by calculate, otherwise, we just copy state from previous subround until to MAX_ROUND.In order to represent the logic of round in blake2f, we design two columns: `s_round_column` and  `round column` .
+we can only set a MAX_ROUND in the circuit.If current round <= round, we updated state of v0-v15 by calculation, otherwise, we just copy state from previous subround until to MAX_ROUND.In order to represent the logic of round in blake2f, we design two columns: `s_round_column` and  `round column` .
 
 Here are our constraints:
 
