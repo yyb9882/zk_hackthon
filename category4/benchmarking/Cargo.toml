@@ -13,5 +13,3 @@ rand_xorshift = "0.3"
 
 # circuits
 blake2f-circuit = { version = "^0.1.0", path = "../blake2f-circuit", features = [ "test" ] }
-ripemd160-circuit = { version = "^0.1.0", path = "../ripemd160-circuit", features = [ "test" ] }
-sha2-256-circuit = { version = "^0.1.0", path = "../sha2-256-circuit", features = [ "test" ] }
