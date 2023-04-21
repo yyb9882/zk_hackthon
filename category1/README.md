@@ -9,7 +9,7 @@ The structure of our project is described as follows:
 4. `test/circuits/SHA256_1.circom`: Test for the correctness of SHA256('abc').
 5. `test/circuits/SHA256_2.circom`: Test for the correctness of SHA256('abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc').
   
-For more details about our project, we refer you to our [demonstration](https://youtu.be/jMvADEYE8Zs).
+Here is the [demonstration](https://youtu.be/jMvADEYE8Zs).
 
 ## Installation
 1. Install `circom` following this [installation guide](https://docs.circom.io/getting-started/installation/). Once installed, ensure that you're using the correct version of `circom` by running `circom --version`. You should see `circom compiler 2.1.4` or later.
