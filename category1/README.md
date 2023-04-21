@@ -8,6 +8,7 @@ The structure of our project is described as follows:
 3. `constants.circom`: Constants k and H used in SHA256 compression function.
 4. `test/circuits/SHA256_1.circom`: Test for the correctness of SHA256('abc').
 5. `test/circuits/SHA256_2.circom`: Test for the correctness of SHA256('abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc').
+  
 For more details about our project, we refer to you our [demonstration](https://youtu.be/jMvADEYE8Zs).
 
 ## Installation
