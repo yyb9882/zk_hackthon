@@ -34,7 +34,7 @@ or, you can run one of the two tests with the command:
 mocha test/SHA256_1 --timeout 10000
 mocha test/SHA256_2 --timeout 10000
 ```
-<h1 align="center">Description of optimization</h1>
+<h1 align="center">Description of Optimization</h1>
 
 ## SHA256 Workflow
 Template `sha256(l)` in `category1/SHA256.circom` is the main function for the entire SHA256 hash function (including padding and SHA256 compression function).
