@@ -16,9 +16,9 @@
   * `benchmarking` and `blake2f-circuit`dir are copied from the task repo.
 # Build and Run Guide
 
-Please go to [category1](https://github.com/yyb9882/zk_hackthon/tree/main/category1) and [category4](https://github.com/yyb9882/zk_hackthon/tree/main/category4/zk-mooc-halo2) for the specifications.
+Please go to [category1](https://github.com/yyb9882/zk_hackthon/tree/main/category1) and [category4](https://github.com/yyb9882/zk_hackthon/tree/main/category4) for the specifications.
 
-# Description of optimization
+# Description of Optimization
 
 Please go to [category1](https://github.com/yyb9882/zk_hackthon/tree/main/category1) and [category4](https://github.com/yyb9882/zk_hackthon/tree/main/category4/) for details.
 
