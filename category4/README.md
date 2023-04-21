@@ -270,7 +270,7 @@ for scheduler:
 
 - assign IV into fixed column
 - assign v0-v7 into `val` column **without** decompse
-- copy v8-v12, v15 from fixed column **without** decompse
+- copy v8-v11, v15 from fixed column **without** decompse
 - copy old_v12, old_v13, old_v14 from fixed column **with** decompse (because we need to ensure v12,v13,v14 were generated correctly by a xor operation on the old values, so we need the spread form of their 16-bit parts).
 - assign c0, c1, flag into `val` column **with** decompse
 - ensure v12, v13, v14 was generated correctly by enable decompose gates and xor gates
@@ -295,7 +295,7 @@ Round1 to MAX_ROUND:
 
 - copy `m` to the correct cell from scheduler (we assign `m` in the `round` column in scheduler). only v0-v3 need `m` stored next to them.
 - for the value updated by `offset_add` , set carry to 1 if overflow happened while updated the value, otherwise, set carry to 0
-- for the value updated by `xor_and_rotate`.set the store spread even bits in two parts (according to rotate) and spread_odd as a single value.
+- for the value updated by `xor_and_rotate`.store the spread even bits in two parts (according to rotate) and spread_odd as a single value.
 - set s_round to 1 if the round is not a padding from last round.
 - set round to max(cur_round, `round`)
 - enforce equal between the last assigned `round` and the `round` assigned in the Scheduler(first row in round column) to ensure
