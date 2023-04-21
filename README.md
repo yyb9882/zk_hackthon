@@ -1,5 +1,16 @@
-<h1 align="center">Category 1: SHA256 Circom Instantiation</h1>
+# Table of Contents
+* category1: 
+  * 1
+  * 2
+  * 3
+* category4:
+  * 1
+  * 2
+  * 3
+* Build and Run Guide
+Please go to category1 and category2 for the specifications.
 
+* Description of your implementation/optimization
 ## SHA256 Test
 For more details about testing our SHA256 circom implementation, we refer you to [here](https://github.com/yyb9882/zk_hackthon/tree/main/category1).
 
