@@ -7,7 +7,7 @@ edition = "2021"
 ethers-core = "^1.0.0"
 halo2_proofs = { git = "https://github.com/halo2-ce/halo2.git" }
 lazy_static = "1.4.0"
-halo2-exp = { git = "ssh://git@github.com/qy3u/halo2-blake2f.git", branch = "final"}
+halo2-exp = { path = "../blake2f-gate"}
 
 [features]
 default = ["test"]

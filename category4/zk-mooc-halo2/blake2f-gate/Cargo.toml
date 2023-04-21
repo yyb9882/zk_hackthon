@@ -1,0 +1,11 @@
+[package]
+name = "halo2-exp"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+halo2_proofs = { git = "git://github.com/halo2-ce/halo2.git" }
+halo2curves = { git = 'https://github.com/privacy-scaling-explorations/halo2curves', tag = '0.3.0' }
+fastrand = "1.9.0"

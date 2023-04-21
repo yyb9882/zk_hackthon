@@ -1,0 +1,296 @@
+1=======================================================
+op_a: xor(-12) and rotate 32
+op_b: xor(+4) and rotate 24
+
+op_c: offset_add_4
+
+op_d: update v0
+op_e: update v1
+op_f: update v2
+op_g: update v3
+
+op_d: prev
+    v0 += m[s[0]]
+    v0 += v4
+
+op_a:
+    v12 ^= v0
+    v12 = bits.RotateLeft64(v12, -32)
+
+op_c:
+    v8 += v12
+
+op_b:
+    v4 ^= v8
+    v4 = bits.RotateLeft64(v4, -24)
+
+op_e: prev
+    v1 += m[s[1]]
+    v1 += v5
+
+op_a:
+    v13 ^= v1
+    v13 = bits.RotateLeft64(v13, -32)
+
+op_c:
+    v9 += v13
+
+op_b:
+    v5 ^= v9
+    v5 = bits.RotateLeft64(v5, -24)
+
+op_f: prev
+    v2 += m[s[2]]
+    v2 += v6
+
+op_a:
+    v14 ^= v2
+    v14 = bits.RotateLeft64(v14, -32)
+
+op_c:
+    v10 += v14
+
+op_b:
+    v6 ^= v10
+    v6 = bits.RotateLeft64(v6, -24)
+
+op_g: prev
+    v3 += m[s[3]]
+    v3 += v7
+
+op_a:
+    v15 ^= v3
+    v15 = bits.RotateLeft64(v15, -32)
+
+op_c:
+    v11 += v15
+
+op_b:
+    v7 ^= v11
+    v7 = bits.RotateLeft64(v7, -24)
+
+2=======================================================
+op_a: xor(-12) and rotate 16
+op_b: xor(+4) and rotate 63
+
+op_c: offset_add_4
+
+op_d: update v0
+op_e: update v1
+op_f: update v2
+op_g: update v3
+
+op_d: prev
+    v0 += m[s[4]]
+    v0 += v4
+
+op_a:
+    v12 ^= v0
+    v12 = bits.RotateLeft64(v12, -16)
+
+op_c:
+    v8 += v12
+
+op_b:
+    v4 ^= v8
+    v4 = bits.RotateLeft64(v4, -63)
+
+op_e: prev
+    v1 += m[s[5]]
+    v1 += v5
+
+op_a:
+    v13 ^= v1
+    v13 = bits.RotateLeft64(v13, -16)
+
+op_c:
+    v9 += v13
+
+op_b:
+    v5 ^= v9
+    v5 = bits.RotateLeft64(v5, -63)
+
+op_f: prev
+    v2 += m[s[6]]
+    v2 += v6
+
+op_a:
+    v14 ^= v2
+    v14 = bits.RotateLeft64(v14, -16)
+
+op_c:
+    v10 += v14
+
+op_b:
+    v6 ^= v10
+    v6 = bits.RotateLeft64(v6, -63)
+
+op_g: prev
+    v3 += m[s[7]]
+    v3 += v7
+
+op_a:
+    v15 ^= v3
+    v15 = bits.RotateLeft64(v15, -16)
+
+op_c:
+    v11 += v15
+
+op_b:
+    v7 ^= v11
+    v7 = bits.RotateLeft64(v7, -63)
+
+
+3=======================================================
+op_a: update v0
+op_b: xor(-15) and rotate 32
+op_c: xor(-11) and rotate 32
+
+op_d: xor(+5) and rotate 24
+op_e: xor(+1) and rotate 24
+
+
+op_f: offset_add_1
+op_g: offset_add_5
+
+op_h: update v1
+op_i: update v2
+op_j: update v3
+
+op_a: prev
+    v0 += m[s[8]]
+    v0 += v5
+
+op_b:
+    v15 ^= v0
+    v15 = bits.RotateLeft64(v15, -32)
+
+op_g:
+    v10 += v15
+
+op_d:
+    v5 ^= v10
+    v5 = bits.RotateLeft64(v5, -24)
+
+op_h: prev
+    v1 += m[s[9]]
+    v1 += v6
+
+op_c:
+    v12 ^= v1
+    v12 = bits.RotateLeft64(v12, -32)
+
+op_f:
+    v11 += v12
+
+op_d:
+    v6 ^= v11
+    v6 = bits.RotateLeft64(v6, -24)
+
+op_i: prev
+    v2 += m[s[10]]
+    v2 += v7
+
+op_c:
+    v13 ^= v2
+    v13 = bits.RotateLeft64(v13, -32)
+
+op_g:
+    v8 += v13
+
+op_e:
+    v7 ^= v8
+    v7 = bits.RotateLeft64(v7, -24)
+
+op_j:prev
+    v3 += m[s[11]]
+    v3 += v4
+
+op_c:
+    v14 ^= v3
+    v14 = bits.RotateLeft64(v14, -32)
+
+op_g:
+    v9 += v14
+
+op_d:
+    v4 ^= v9
+    v4 = bits.RotateLeft64(v4, -24)
+
+
+
+4 ===========================================================
+
+op_a: update v0
+op_b: update v1
+op_d: offset_add_1
+op_e: offset_add_5
+
+op_c: xor(cur - 15) and rotate 16
+op_f: xor(cur + 5) and rotate 63
+op_g: xor(cur - 11) and rotate 16
+
+op_h: xor(cur + 1) and rotate 63
+
+op_i: update v2
+op_j: update v3
+
+op_a: prev
+    v0 += m[s[12]]
+    v0 += v5
+
+op_c:
+    v15 ^= v0
+    v15 = bits.RotateLeft64(v15, -16)
+
+op_e:
+    v10 += v15
+
+op_f:
+    v5 ^= v10
+    v5 = bits.RotateLeft64(v5, -63)
+
+op_b: prev
+    v1 += m[s[13]]
+    v1 += v6
+
+op_g:
+    v12 ^= v1
+    v12 = bits.RotateLeft64(v12, -16)
+
+op_d:
+    v11 += v12
+
+op_f:
+    v6 ^= v11
+    v6 = bits.RotateLeft64(v6, -63)
+
+op_i: prev
+    v2 += m[s[14]]
+    v2 += v7
+
+op_g:
+    v13 ^= v2
+    v13 = bits.RotateLeft64(v13, -16)
+
+op_e:
+    v8 += v13
+
+op_h:
+    v7 ^= v8
+    v7 = bits.RotateLeft64(v7, -63)
+
+op_j: prev
+    v3 += m[s[15]]
+    v3 += v4
+
+op_g:
+    v14 ^= v3
+    v14 = bits.RotateLeft64(v14, -16)
+
+op_e:
+    v9 += v14
+
+op_f:
+    v4 ^= v9
+    v4 = bits.RotateLeft64(v4, -63)
