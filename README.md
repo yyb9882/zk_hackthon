@@ -11,7 +11,7 @@
   * 4 `sha256.circom`: SHA256 main function, including SHA256 hash function, padding and SHA256 compression function.
   * 5 `Demonstration.mp4`: Demonstration of our SHA256 hash function submission.
   * 6 `README.md`: Guidance for testing our SHA256 implementation.
-* category4 (this is the folder that we made to deliver the solution for task4.3):
+* category4 (this is the folder that we made to deliver the solution for task4.2):
   * 1
   * 2
   * 3
