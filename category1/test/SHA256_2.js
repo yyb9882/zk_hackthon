@@ -12,7 +12,7 @@ describe("SHA256_2", () => {
     });
 
     // Compute hash of "abc" repetition without padding 
-    // Input bits: 24 * 3 * 6
+    // Input bits: 24 * 3 * 8
     it("should pass - small bitwidth", async () => {
         const input = {
             "M": [0,1,1,0,
