@@ -121,7 +121,7 @@ v5 ^= v9
 v5 = bits.RotateLeft64(v5, -24)
 ```
 So, for simplicity, we constraints xor and rotate in one step.
-There a many xor_and_rotate gates in our implemention.
+There are many xor_and_rotate gates in our implemention.
 
 
 
