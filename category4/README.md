@@ -318,7 +318,7 @@ So, for final_h_xor:
     h[6] ^= v6 ^ v14
     h[7] ^= v7 ^ v15
 ```
- Let' use `h[0]` as an exaple.
+ Let' use `h[0]` as an example.
 
 Since `old h[0]` was assigned to v0 in Scheduler. v0 in Scheduler was copied to the beginning of MainRound.So, we can find `old h[0]`at the first row of MainRound.By rotation, it's -(MAX_ROUND + 1) * ROWS_PER_ROUND.`v0` and `v8`can be easily found just a little before `h[0]`.By rotation, it's -4 * 16 and -4 * 8.
 
