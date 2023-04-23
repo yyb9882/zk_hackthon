@@ -4,7 +4,7 @@ We use the implemention in go-ethereum for reference:https://github.com/ethereum
 
 
 
-## Introduce
+## Introduction
 
 We split the blake2f function into three parts.
 
